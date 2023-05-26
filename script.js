@@ -4,14 +4,16 @@ async function Goals() {
 
     const response = await fetch(request);
     const data = await response.json();
+
+    displayGoals(data);
 }
 
-function displayGoals() {
+function displayGoals(data) {
     const main = document.querySelector('main');
     const goalsContainer = document.createElement('div');
     const itemsContainer = document.createElement('ul');
 
-    itemsContainer.appendChild(document.createElement('li').appendText(data.goals.Webtutorial));
+    const goalTitle = data.goals.webTutorial
 
 
 
