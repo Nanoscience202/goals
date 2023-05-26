@@ -13,9 +13,7 @@ function displayGoals(data) {
     const goalsContainer = document.createElement('div');
     const itemsContainer = document.createElement('ul');
 
-    const goalTitle = data.goals.webTutorial
-
-
+    goalsContainer.appendChild(itemsContainer);
 
     main.appendChild(goalsContainer);
 }

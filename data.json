@@ -1,12 +1,13 @@
 {
-    "goals": [
-        {
-            "name": "webTutorial",
-            "S": "Finish web development bootcamp video",
-            "M": "Kepp track of the progress bar",
-            "A": "Watch 2h/day, finish in 10 days",
-            "R": "Yes",
-            "T": "Finish by June 5 2023"
-        }
-    ]
+    "webturial": 
+    {
+        "name": "Web Tutorial",
+        "smart" : [
+            "Finish web development bootcamp video", 
+            "Keep track of the progress bar",
+            "Watch 2h/day, finish in 10 days",
+            "Yes",
+            "Finish by June 5 2023"
+        ]
+    }
 }
