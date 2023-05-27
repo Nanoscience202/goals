@@ -1,6 +1,7 @@
 {
     "webTutorial": {
         "name": "Web Tutorial",
+        "description" : "This is a web tutorial for the bootcamp",
         "smart" : [
             "Finish web development bootcamp video", 
             "Keep track of the progress bar",
