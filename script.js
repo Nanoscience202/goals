@@ -11,35 +11,42 @@ async function Goals() {
 function displayGoals(data) {
     const grid = document.querySelector('#grid-container'); // grid container
     
-    // name of goal
-    const name = data.webTutorial.name;
-    const nameContainer = document.createElement('div'); // name container
-    nameContainer.appendChild(document.createTextNode(name));
-    nameContainer.className = 'name-container'; // add class name to name container: name-container
-    grid.appendChild(nameContainer);
+    for (let i = 0; i < data.length; i++) {
 
-    // description
-    const description = data.webTutorial.description;
-    const descriptionContainer = document.createElement('div'); // description container
-    descriptionContainer.appendChild(document.createTextNode(description));
-    descriptionContainer.className = 'description-container'; // add class name to description container: description-container
-    nameContainer.appendChild(descriptionContainer);
-    
-    // smart property
-    const goalsContainer = document.createElement('div'); // list container
-    const itemsContainer = document.createElement('ul'); // unordered list
-    itemsContainer.className = 'list-container'; // add class name to list container: list-container
-    for (let i = 0; i < data.webTutorial.smart.length; i++) {
-        const item = data.webTutorial.smart[i];
-        const itemElement = document.createElement('li'); // add item to list
-        itemElement.className = 'list-item'; // add class name to list item: list-item
-        const itemText = document.createTextNode(item);
+        // name of goal
+        const name = data[i].name;
+        const nameContainer = document.createElement('div'); // name container
+        nameContainer.className = 'name-container'; // add class name to name container: name-container
+        const nameParagraph = document.createElement('p'); // name paragraph
+        nameParagraph.appendChild(document.createTextNode(name));
+        nameParagraph.className = 'name-paragraph'; // add class name to name paragraph: name-paragraph
+        nameContainer.appendChild(nameParagraph);
+        grid.appendChild(nameContainer);
 
-        itemElement.appendChild(itemText);
-        itemsContainer.appendChild(itemElement);
+        // description
+        const description = data[i].description;
+        const descriptionContainer = document.createElement('p'); // description container
+        descriptionContainer.appendChild(document.createTextNode(description));
+        descriptionContainer.className = 'description-container'; // add class name to description container: description-container
+        nameParagraph.appendChild(descriptionContainer);
+        
+        // smart property
+        const goalsContainer = document.createElement('div'); // list container
+        const itemsContainer = document.createElement('ul'); // unordered list
+        itemsContainer.className = 'list-container'; // add class name to list container: list-container
+        for (let j = 0; j < data[i].smart.length; j++) {
+            const item = data[i].smart[j];
+            const itemElement = document.createElement('li'); // add item to list
+            itemElement.className = 'list-item'; // add class name to list item: list-item
+            const itemText = document.createTextNode(item);
+
+            itemElement.appendChild(itemText);
+            itemsContainer.appendChild(itemElement);
+        }
+
+        goalsContainer.appendChild(itemsContainer);
+        goalsContainer.className = 'goals-container'; // add class name to goals container: goals-container
+        grid.appendChild(goalsContainer);
+
     }
-
-    goalsContainer.appendChild(itemsContainer);
-    goalsContainer.className = 'goals-container'; // add class name to goals container: goals-container
-    grid.appendChild(goalsContainer);
 }
