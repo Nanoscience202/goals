@@ -1,8 +1,9 @@
-async function Goals() {    
-    const requestUrl = 'https://raw.githubusercontent.com/Nanoscience202/goals/main/data.json';
-    const request = new Request(requestUrl);
 
-    const response = await fetch(request);
+async function Goals() {    
+    // const requestUrl = 'https://raw.githubusercontent.com/Nanoscience202/goals/main/data.json';
+    // const request = new Request(requestUrl);
+
+    const response = await fetch('./data.json');
     const data = await response.json();
 
     displayGoals(data);
