@@ -1,0 +1,25 @@
+:root {
+    --seeBox: black 1px solid;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100px;
+}
+.name-container {
+    padding: 20px;
+    border: var(--seeBox);
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.goals-container{
+    border: var(--seeBox);
+}
