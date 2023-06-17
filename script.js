@@ -1,16 +1,15 @@
-
 async function Goals() {    
     // const requestUrl = 'https://raw.githubusercontent.com/Nanoscience202/goals/main/data.json';
     // const request = new Request(requestUrl);
 
     const response = await fetch('./data.json');
-    const data = await response.json();
+    window.data = await response.json();
 
     displayGoals(data);
 }
 
 function displayGoals(data) {
-    const grid = document.querySelector('#grid-container'); // grid container
+    const grid = document.querySelector('.grid-container'); // grid container
     
     for (let i = 0; i < data.length; i++) {
 
@@ -48,6 +47,35 @@ function displayGoals(data) {
         goalsContainer.appendChild(itemsContainer);
         goalsContainer.className = 'goals-container'; // add class name to goals container: goals-container
         grid.appendChild(goalsContainer);
-
     }
+}
+
+function addGoal() {
+    const form = document.getElementById('form');
+    form.style.display = 'grid';
+    form.addEventListener('submit', onsubmitForm);
+}
+
+function onsubmitForm(e) {
+    const form = document.getElementById('form');
+    form.style.display = 'none';
+    e.preventDefault();
+    
+
+    const goalName = document.getElementById('goalName').value;
+    const description = document.getElementById('Description').value;
+    const specificGoal = document.getElementById('specificGoal').value;
+    const measurable = document.getElementById('Measurable').value;
+    const action = document.getElementById('Action').value;
+    const time = document.getElementById('Time').value;
+
+    const newGoal = [{
+        name: goalName,
+        description: description,
+        smart: [specificGoal, measurable, action, time]
+    }]
+
+    displayGoals(newGoal);
+    form.reset();
+    form.removeEventListener('submit', onsubmitForm);
 }

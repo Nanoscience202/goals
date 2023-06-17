@@ -7,12 +7,51 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/132a3eb674.js" crossorigin="anonymous"></script>
 </head>
 <body onload="Goals()">
     <header>
         <h1>Goals</h1>
+        <i class="icon fa fa-plus" id="plus" onclick="addGoal()"></i>
     </header>
-    <main id="grid-container"></main>
+    <main class="grid-container"></main>
+    
+
+    <form class="grid-container" id="form">
+        <div class="name-container">
+            <div class="name-paragraph">
+                <label for="goalName">Name:</label>
+                <input type="text" id="goalName" style="font-size:2rem">
+                <p class="description-container">
+                    <label for="Description">Description:</label>
+                    <input type="text" id="Description" style="font-size:1.5rem">
+                </p>
+            </div>
+        </div>
+        <div class="goals-container">
+            <ul class="list-container">
+                <li class="list-item">
+                    <label for="specificGoal">Specific Goal:</label>
+                    <input type="text" id="specificGoal" style="font-size:1rem">
+                </li>
+                <li class="list-item">
+                    <label for="Measurable">Measurable:</label>
+                    <input type="text" id="Measurable" style="font-size:1rem">
+                </li>
+                <li class="list-item">
+                    <label for="Action">Action:</label>
+                    <input type="text" id="Action" style="font-size:1rem">
+                </li>
+                <li class="list-item">
+                    <label for="Time">Time:</label>
+                    <input type="text" id="Time" style="font-size:1rem">
+                </li>
+            </ul>
+        </div>
+        <input type="submit">
+    </form>
+
+    
     <footer></footer>
 </body>
 </html>

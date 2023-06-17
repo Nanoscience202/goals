@@ -16,7 +16,6 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 header {
@@ -26,15 +25,17 @@ header {
     align-items: center;
     justify-content: center;
     color: rgb(3, 81, 38);
+    position: relative;
 }
 
-#grid-container {
+.grid-container {
     width: auto;
     display: grid;
     grid-template-columns: 60% 40%;
     margin: 1rem;
     row-gap: 1rem;
 }
+
 .name-container {
     padding: 20px;
     background-color: var(--color1);
@@ -69,7 +70,7 @@ header {
     margin: 0;
 }
 
-ul :nth-last-child(1){
+ul :nth-last-child(1) {
     border-bottom: none;
 }
 
@@ -78,4 +79,38 @@ ul :nth-last-child(1){
     border-bottom: var(--color5) solid 1px;
     border-left: var(--color5) solid 1px;
     color: white;
+}
+
+.icon {
+    color: black;
+    position: absolute;
+    right: 1.7rem;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: white;
+}
+
+#form {
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+    .grid-container {
+        grid-template-columns: 100%;
+        row-gap: 0px;
+    }
+    .name-container {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 1rem;
+    }
+    .goals-container {
+        border-bottom-left-radius: 1rem;
+        border-top-right-radius: 0;
+    }
+    main > div:nth-of-type(even) {
+        margin-bottom: 1rem;
+    }
 }
